@@ -25,7 +25,7 @@ const Users = () => {
         //   });
 
         // delete from the db
-        fetch(`http://localhost:5000/users/${id}`, {
+        fetch(`https://coffee-store-server-five-ochre.vercel.app/users/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -73,7 +73,7 @@ const Users = () => {
                     className="btn"
                   >
                     X
-                  </button>
+                  </button> 
                 </td>
               </tr>
             ))}

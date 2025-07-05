@@ -6,7 +6,9 @@ import { useState } from "react";
 function App() {
   const loadedCoffees = useLoaderData();
   console.log(loadedCoffees);
-  const [coffees, setCoffees] = useState(loadedCoffees);
+  // const [coffees, setCoffees] = useState(loadedCoffees);
+  const [coffees, setCoffees] = useState(Array.isArray(loadedCoffees) ? loadedCoffees : []);
+
 
   return (
     <div className="m-20">

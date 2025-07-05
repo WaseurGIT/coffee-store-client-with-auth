@@ -6,15 +6,33 @@ import { getAuth } from "firebase/auth";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyCQE-zNGFcqU714vhy-Z6WIjMV8AWAo2rM",
-  authDomain: "coffee-store-f072f.firebaseapp.com",
-  projectId: "coffee-store-f072f",
-  storageBucket: "coffee-store-f072f.firebasestorage.app",
-  messagingSenderId: "329430989844",
-  appId: "1:329430989844:web:383b8e62751064576dfb01"
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECTID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_Id,
+  appId: import.meta.env.VITE_FIREBASE_APPID
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 export default auth
+
+
+/**
+ * 1. firebase-tools (one time)
+ * 2. firebase login (one time)
+ * 3. firebase logout
+ * 4. firebase login
+ * 5. one time for each project : firebase init
+ * 6. what you want to do : select hosting
+ * 7. select a project (already have one created in firebase console)
+ * 8. what will be your public : dist
+ * 9. single page? : yes 
+ * 
+ * ---------------
+ * each time you want to deploy
+ * 10. npm run build
+ * 11. firebase deploy
+ */

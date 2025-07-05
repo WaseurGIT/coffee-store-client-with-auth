@@ -3,6 +3,7 @@ import Swal from "sweetalert2";
 
 const UpdateCoffee = () => {
   const coffee = useLoaderData();
+  
   const { _id, name,quantity,taste, supplier, category, details, photo } = coffee;
 
   const handleUpdateCoffee = (e) => {
@@ -30,7 +31,7 @@ const UpdateCoffee = () => {
 
     // 1.send data to the server
 
-    fetch(`http://localhost:5000/coffee/${_id}`, {
+    fetch(`https://coffee-store-server-five-ochre.vercel.app/coffee/${_id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
